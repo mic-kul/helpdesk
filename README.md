@@ -1,4 +1,4 @@
-helpdesk
+Helpdesk
 ========
 
-Helpdesk Rails application with email pipeing
+Helpdesk application with email pipeing made using Ruby on Rails

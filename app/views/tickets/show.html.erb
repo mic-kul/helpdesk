@@ -1,0 +1,36 @@
+<div class="page-header">
+	<% title "Ticket# #{@ticket.id}" %>
+</div>
+<div class="row-fluid">
+					<div class="span4 m-widget">
+
+
+  <div class="m-widget-header"><h3><%=h @ticket.topic %></h3> </div>
+<span class="pull-right">by  <strong><%=h @ticket.user.username %></strong> on  <i><%=h @ticket.created_at %> in <strong><%= @ticket.category.name %></strong></i></span>
+
+
+
+<p>
+  <strong>Message:</strong><br>
+  <%=h @ticket.message %>
+</p>
+
+
+<p>
+  <%= link_to "Edit", edit_ticket_path(@ticket) %> |
+  <%= link_to "Destroy", @ticket, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", tickets_path %>
+</p>
+</div>
+<div class="span4 m-widget">
+
+<h3>Replies</h3>
+
+</div>
+
+<div class="span4 m-widget">
+
+<h3>Previous tickets of <%= @ticket.user.username %></h3>
+
+</div>
+</div>

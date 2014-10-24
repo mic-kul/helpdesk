@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "bootstrap" %>
+    <%= stylesheet_link_tag "bootstrap-responsive" %>
+    <%= stylesheet_link_tag "style" %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "jquery-1.7.1.min" %>
+    <%= javascript_include_tag "bootstrap" %>
+    <%= javascript_include_tag "chart" %>
+    <%= javascript_include_tag "main" %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top m-header">
+		<div class="navbar-inner m-inner">
+			<div class="container-fluid">
+				<a class="brand m-brand" href="/">Support</a>
+				
+	            <form class="form-search m-search span5">
+					<input type="text" placeholder="Type to search" class="span5 search-query">
+				</form>
+
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		        
+				<div class="nav-collapse collapse">
+
+					<div class="btn-group pull-right">
+				        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			          		<i class="icon-user"></i> Thanh Dang
+			          		<span class="caret"></span>
+				        </a>
+				        <ul class="dropdown-menu">
+			          		<li><a href="#"><i class="icon-user"></i>Profile</a></li>
+			          		<li><a href="#"><i class="icon-cog"></i>Settings</a></li>
+	 		 				<li class="divider"></li>
+			          		<li><a href="login.html"><i class="icon-off"></i>Logout</a></li>
+				        </ul>
+			      	</div>
+	          	</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-top"></div>
+	<aside class="sidebar">
+		<ul class="nav nav-tabs nav-stacked">
+			<li class="active">
+				<a href="/">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-home.png" %>
+						</div>
+						<div class="title">
+							Home
+						</div>
+					</div>
+
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="/tickets">
+					<span class="badge badge-important m-badge-notification">6</span>
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-notification.gif" %>
+						</div>
+						<div class="title">
+							Tickets
+						</div>
+					</div>
+
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="form.html">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-setting.gif" %>
+						</div>
+						<div class="title">
+							Setting
+						</div>
+					</div>
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="order.html">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-order.gif" %>
+						</div>
+						<div class="title">
+							Order
+						</div>
+					</div>
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="media.html">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-media.gif" %>
+						</div>
+						<div class="title">
+							Media
+						</div>
+					</div>
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="help.html">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-help.gif" %>
+						</div>
+						<div class="title">
+							Help
+						</div>
+					</div>
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="#more">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-user.gif" %>
+						</div>
+						<div class="title">
+							User
+						</div>
+					</div>
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="#more">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-report.gif" %>
+						</div>
+						<div class="title">
+							Report
+						</div>
+					</div>
+					<div class="arrow">
+						<div class="bubble-arrow-border"></div>
+						<div class="bubble-arrow"></div>
+					</div>
+				</a>
+			</li>
+
+			<li class="">
+				<a href="#" id="btn-more">
+					<div>
+						<div class="ico">
+							<%= image_tag "ico/ico-more.png" %>
+						</div>
+						<div class="title">
+							More
+						</div>
+					</div>
+				</a>
+
+			</li>
+	    </ul>
+	</aside>
+	<div class="m-sidebar-collapsed">
+		<ul class="nav nav-pills">
+			
+		</ul>
+
+		<div class="arrow-border">
+			<div class="arrow-inner"></div>
+		</div>
+	</div>
+	<div class="main-container">
+		<div class="container-fluid">
+ <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+<%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+			
+		</div>
+	</div>
+</body>
+</html>

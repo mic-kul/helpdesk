@@ -1,0 +1,11 @@
+one:
+  topic: MyString
+  message: MyText
+  user: 
+  category: 
+
+two:
+  topic: MyString
+  message: MyText
+  user: 
+  category: 
